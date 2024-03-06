@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZIKO CCJ</title>
+    <link rel="icon" href="../assets/ecologo1.png" type="image/png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="../assets/ecologo1.png" alt="YEW logo" class="logo">
+            <a href="../../index.html">Home</a>
+            <a href="../pages/about-us.html">About</a>
+            <a href="../pages/project.html">Projects</a>
+            <a href="../pages/team.html">Our Team</a>
+            <a href="../pages/contact.html">Contact Us</a>
+            <a href="../pages/donate.html"><button>Support Us</button></a>
+
+        </nav>
+    </header>
+
+    <script>
+        // Function to switch between navbar logo images
+        function switchNavbarLogo() {
+            var logo1 = "../assets/ecologo2.jpg"; // Path to the first logo image
+            var logo2 = "../assets/ecologo.jpg"; // Path to the second logo image
+            var logo = document.querySelector('.logo'); // Select the logo element
+
+            // Toggle between the two logo images
+            if (logo.src.endsWith(logo1)) {
+                logo.src = logo2;
+            } else {
+                logo.src = logo1;
+            }
+        }
+
+        // Set interval to switch navbar logo every 3 seconds (3000 milliseconds)
+        setInterval(switchNavbarLogo, 3000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZIKO CCJ</title>
+    <link rel="icon" href="./assets/ecologo1.png" type="image/png">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+<section id="home">
+    <h1>DZIKO CENTRE FOR CLIMATE JUSTICE</h1>
+    <p>Leading the charge in climate justice</p>
+    <img src="assets/ecologo.jpg" alt="Home Image" id="homepic1">
+    <img src="assets/ecologo2.jpg" alt="Home Image" id="homepic2" style="display: none;">
+</section>
+
+<script>
+    // Function to switch between images
+    function switchImages() {
+        var img1 = document.getElementById('homepic1');
+        var img2 = document.getElementById('homepic2');
+
+        // Toggle the visibility of the images
+        img1.style.display = (img1.style.display === 'none') ? 'block' : 'none';
+        img2.style.display = (img2.style.display === 'none') ? 'block' : 'none';
+    }
+
+    // Set interval to switch images every 3 seconds (3000 milliseconds)
+    setInterval(switchImages, 3000);
+</script>
+
+
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Young Eco-Warriors Global is a youth-led organization dedicated to environmental conservation and
+            climate
+            action. Our mission is to empower young people to become leaders in protecting the planet for future
+            generations.</p>
+        <a href="../pages/about-us.html" class="cta-btn">Learn more</a>
+    </section>
+
+    <section id="projects">
+        <h2>Our Projects</h2>
+        <p>Explore our initiatives and campaigns aimed at addressing pressing environmental issues such as
+            deforestation, plastic pollution, and climate change.</p>
+        <a href="../pages/project.html" class="cta-btn">View Projects</a>
+    </section>
+
+
+    <section id="support">
+        <h2>Support Us</h2>
+        <p>Join us in our mission to create a sustainable future by supporting our work. Your donations help
+            fund our
+            projects and educational programs.</p>
+        <a href="../pages/donate.html" class="cta-btn">Get Involved</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to collaborate? Reach out to us and let's work together to make a positive
+            impact on
+            the environment.</p>
+        <a href="../pages/contact.html" class="cta-btn">Get in Touch</a>
+    </section>
+<div id="footer-container"></div>
+<script src="components/navbar/navbar.js"></script>
+<script src="components/footer/footer.js"></script>
+</body>
+
+</html>

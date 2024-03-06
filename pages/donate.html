@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZIKO CCJ</title>
+    <link rel="icon" href="../assets/ecologo1.png" type="image/png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <section id="volunteer-section">
+        <h2>Volunteer to Support our cause</h2>
+        <p></p>
+
+        <form id="volunteer-form" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Briefly desribe your motivations:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <div id="thank-you-message1" style="display: none;">
+        Thank you for your willingness to support our cause. One of our team members will get in touch with you shortly.
+    </div>
+
+
+    <section id="donate-section">
+        <h2>Donate to Support our cause</h2>
+        <p>Your generosity fuels our mission to protect the planet and inspire future generations. Please take a moment
+            to express your interest in supporting our programs by filling out the form below. A member of our team will
+            be in touch with you soon to discuss the next steps.</p>
+
+        <form id="donation-form" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="amount">Donation Amount ($):</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <div id="thank-you-message" style="display: none;">
+        Thank you for your willingness to support our cause. 
+        One of our team members will get in touch with you shortly.
+    </div>
+
+    <div id="footer-container"></div>
+    <script src="../components/navbar/navbar.js"></script>
+    <script src="../components/footer/footer.js"></script>
+    <script>
+        document.getElementById("volunteer-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            document.getElementById("volunteer-form").style.display = "none";
+            document.getElementById("thank-you-message1").style.display = "block";
+        });
+    </script>
+    <script>
+        document.getElementById("donation-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            document.getElementById("donation-form").style.display = "none";
+            document.getElementById("thank-you-message").style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
