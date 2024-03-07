@@ -286,7 +286,23 @@ footer {
 font-size: larger;
 display: none;
     position: absolute;
-    top: 75%;
+    top: 80%;
+    /* Position the message below the form */
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+    /* Adjust the margin as needed */
+    text-align: center;
+    color: #0c213e;
+    font-style: italic;
+}
+
+#thank-you-message1,
+#thank-you-message2 {
+    font-size: larger;
+    display: none;
+    position: absolute;
+    top: 30%;
     /* Position the message below the form */
     left: 0;
     width: 100%;
@@ -297,20 +313,6 @@ display: none;
     font-style: italic;
 }
 
-#thank-you-message1 {
-    font-size: larger;
-    display: none;
-    position: absolute;
-    top: 32%;
-    /* Position the message below the form */
-    left: 0;
-    width: 100%;
-    margin-top: 20px;
-    /* Adjust the margin as needed */
-    text-align: center;
-    color: #001738;
-    font-style: italic;
-}
 
 #contact-section,
 #donate-section{

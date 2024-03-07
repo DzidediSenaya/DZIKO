@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="../css/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Include EmailJS library and initialization script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "QXEJOQ0_JmeGAKK4Z",
+            });
+        })();
+    </script>
 </head>
 
 <body>
@@ -18,26 +28,29 @@
         <h2>Volunteer to Support our cause</h2>
         <p></p>
 
+        <!-- Volunteer form -->
         <form id="volunteer-form" method="POST">
             <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="volunteer-name" name="name" required>
 
             <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="volunteer-email" name="email" required>
 
-            <label for="message">Briefly desribe your motivations:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <label for="message">Briefly describe your motivations:</label><br>
+            <textarea id="volunteer-message" name="message" rows="4" required></textarea><br><br>
 
             <input type="submit" value="Submit">
         </form>
+
+        <!-- Thank you message -->
+        <div id="thank-you-message1" style="display: none;">
+            Thank you for your willingness to support our cause. One of our team members will get in touch with you
+            shortly.
+        </div>
     </section>
 
-    <div id="thank-you-message1" style="display: none;">
-        Thank you for your willingness to support our cause. One of our team members will get in touch with you shortly.
-    </div>
-
-
     <section id="donate-section">
+        <!-- Donation form -->
         <h2>Donate to Support our cause</h2>
         <p>Your generosity fuels our mission to protect the planet and inspire future generations. Please take a moment
             to express your interest in supporting our programs by filling out the form below. A member of our team will
@@ -45,38 +58,56 @@
 
         <form id="donation-form" method="POST">
             <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="donation-name" name="name" required>
 
             <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="donation-email" name="email" required>
 
             <label for="amount">Donation Amount ($):</label>
-            <input type="number" id="amount" name="amount" required>
+            <input type="number" id="donation-amount" name="amount" required>
 
             <input type="submit" value="Submit">
         </form>
-    </section>
 
-    <div id="thank-you-message" style="display: none;">
-        Thank you for your willingness to support our cause. 
-        One of our team members will get in touch with you shortly.
-    </div>
+        <!-- Thank you message -->
+        <div id="thank-you-message" style="display: none;">
+            Thank you for your willingness to support our cause.
+            One of our team members will get in touch with you shortly.
+        </div>
+    </section>
 
     <div id="footer-container"></div>
     <script src="../components/navbar/navbar.js"></script>
     <script src="../components/footer/footer.js"></script>
+
+    <!-- JavaScript for form submission and EmailJS integration -->
     <script>
+        // Function to handle volunteer form submission and send emails
         document.getElementById("volunteer-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            document.getElementById("volunteer-form").style.display = "none";
-            document.getElementById("thank-you-message1").style.display = "block";
+            event.preventDefault(); // Prevent default form submission
+            // Send email using EmailJS with the volunteer template ID
+            emailjs.sendForm('service_rs791jj', 'template_wsuwkkf', this)
+                .then(function () {
+                    // On success, display thank you message and hide form
+                    document.getElementById("volunteer-form").style.display = "none";
+                    document.getElementById("thank-you-message1").style.display = "block";
+                }, function (error) {
+                    console.log('FAILED...', error); // Log any errors
+                });
         });
-    </script>
-    <script>
+
+        // Function to handle donation form submission and send emails
         document.getElementById("donation-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            document.getElementById("donation-form").style.display = "none";
-            document.getElementById("thank-you-message").style.display = "block";
+            event.preventDefault(); // Prevent default form submission
+            // Send email using EmailJS with the donation template ID
+            emailjs.sendForm('service_rs791jj', 'template_m7fpuce', this)
+                .then(function () {
+                    // On success, display thank you message and hide form
+                    document.getElementById("donation-form").style.display = "none";
+                    document.getElementById("thank-you-message").style.display = "block";
+                }, function (error) {
+                    console.log('FAILED...', error); // Log any errors
+                });
         });
     </script>
 </body>

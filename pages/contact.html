@@ -24,8 +24,7 @@
             environment.
         </p>
 
-
-        <form id="contact-form" method="POST" action="your-email-address@example.com">
+        <form id="contact-form" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
 
@@ -36,22 +35,41 @@
             <textarea id="message" name="message" rows="4" required></textarea><br><br>
 
             <input type="submit" value="Submit">
-    </section>
-    </form>
-    <div id="thank-you-message" style="display: none;">
-        Thank you for contacting us. One of our team members will get in touch with you shortly.
-    </div>
+        </form>
+
+        <div id="thank-you-message2" style="display: none;">
+            Thank you for contacting us. One of our team members will get in touch with you shortly.
+        </div>
     </section>
 
     <div id="footer-container"></div>
     <script src="../components/navbar/navbar.js"></script>
     <script src="../components/footer/footer.js"></script>
-    <script>
+
+    <!-- JavaScript for form submission and EmailJS integration -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "QXEJOQ0_JmeGAKK4Z",
+            });
+        })();
+
         document.getElementById("contact-form").addEventListener("submit", function (event) {
-            event.preventDefault();
-            document.getElementById("contact-form").style.display = "none";
-            document.getElementById("thank-you-message").style.display = "block";
+            event.preventDefault(); // Prevent default form submission
+
+            // Send email using EmailJS
+            emailjs.sendForm('service_rs791jj', 'template_wsuwkkf', this)
+                .then(function () {
+                    // On success, display thank you message and hide form
+                    document.getElementById("contact-form").style.display = "none";
+                    document.getElementById("thank-you-message2").style.display = "block";
+                }, function (error) {
+                    console.log('FAILED...', error); // Log any errors
+                });
         });
+        
     </script>
 </body>
 
