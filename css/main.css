@@ -280,7 +280,7 @@ footer {
 
     nav a {
         margin: 5px; /* Reduce spacing between links */
-        font-size: 12px;
+        font-size: 14px;
 
 
     }
@@ -292,3 +292,7 @@ nav img.logo {
     height: auto; /* Maintain aspect ratio */
 }
 
+
+button {
+font-size: 14px;
+}
