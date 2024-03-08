@@ -274,7 +274,7 @@ footer {
 /* Adjust the navigation layout for smaller screens */
 @media screen and (max-width: 768px) {
     nav {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
 
@@ -285,7 +285,7 @@ footer {
 
 /* Smaller logo size */
 nav img.logo {
-    width: 100px; /* Adjust the width as needed */
+    width: 50px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
 }
 
