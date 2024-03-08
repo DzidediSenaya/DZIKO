@@ -270,3 +270,26 @@ footer {
         width: 50%;
     }
 }
+
+/* Adjust navigation bar layout for smaller screens */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+}
+
+/* Ensure consistent alignment for all navigation links */
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-top: 10px; /* Add some top margin for better alignment */
+    transition: color 0.3s ease;
+}
+
+nav .contact-us {
+    margin-top: 10px; /* Add some top margin for better alignment */
+}
