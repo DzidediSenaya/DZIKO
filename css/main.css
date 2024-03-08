@@ -280,12 +280,15 @@ footer {
 
     nav a {
         margin: 5px; /* Reduce spacing between links */
+        font-size: 12px;
+
+
     }
 }
 
 /* Smaller logo size */
 nav img.logo {
-    width: 50px; /* Adjust the width as needed */
+    width: 40px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
 }
 
