@@ -197,7 +197,7 @@ footer {
 
 /* CSS for the contact form box styling */
 #contact-form, #donation-form, #volunteer-form {
-    width: 50%;
+    width: 70%;
     margin: auto;
     padding: 20px;
     background-color: #DEEDF9;
