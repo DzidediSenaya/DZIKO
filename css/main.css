@@ -271,25 +271,21 @@ footer {
     }
 }
 
-/* Adjust navigation bar layout for smaller screens */
+/* Adjust the navigation layout for smaller screens */
 @media screen and (max-width: 768px) {
     nav {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
-  
+
+    nav a {
+        margin: 5px; /* Reduce spacing between links */
+    }
 }
 
-/* Ensure consistent alignment for all navigation links */
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    margin-right: 20px;
-    margin-top: 10px; /* Add some top margin for better alignment */
-    transition: color 0.3s ease;
+/* Smaller logo size */
+nav img.logo {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
-nav .contact-us {
-    margin-top: 10px; /* Add some top margin for better alignment */
-}
