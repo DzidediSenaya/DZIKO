@@ -27,10 +27,66 @@
     </section>
 
     <section>
-        <p>Our Recent Climate Change Workshop At The Divine Grace School in Oyarifa, Accra - Ghana</p>
-        <img src="../assets/project1.jpg"/>
+        <div class="gallery-container">
+            <p>Our Recent Climate Change Workshop At The Divine Grace School in Oyarifa, Accra - Ghana</p>
+            <button class="gallery-btn prev" onclick="prevImage()">&#10094;</button>
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143128.jpg" alt="Image 1">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143167.jpg" alt="Image 2">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143168.jpg" alt="Image 3">
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143171.jpg" alt="Image 4">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143172.jpg" alt="Image 5">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143174.jpg" alt="Image 6">
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143180.jpg" alt="Image 7">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143185.jpg" alt="Image 8">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143186.jpg" alt="Image 9">
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143188.jpg" alt="Image 10">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143192.jpg" alt="Image 11">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143193.jpg" alt="Image 12">
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143195.jpg" alt="Image 13">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143196.jpg" alt="Image 14">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143197.jpg" alt="Image 15">
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143199.jpg" alt="Image 16">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143203.jpg" alt="Image 17">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143204.jpg" alt="Image 18">
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143216.jpg" alt="Image 19">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143217.jpg" alt="Image 20">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143218.jpg" alt="Image 21">
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143225.jpg" alt="Image 22">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143227.jpg" alt="Image 23">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143234.jpg" alt="Image 24">
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143236.jpg" alt="Image 25">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143238.jpg" alt="Image 26">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143244.jpg" alt="Image 27">
+            <img class="gallery-img active" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143254.jpg" alt="Image 28">
+            <img class="gallery-img" src="../assets/wetransfer_1000143168-jpg_2024-03-08_1827/1000143256.jpg" alt="Image 29">
+            <button class="gallery-btn next" onclick="nextImage()">&#10095;</button>
+        </div>
     </section>
+    
 
+    <script>
+   let currentImageIndex = 0;
+const images = document.querySelectorAll('.gallery-img');
+
+function showImage(index) {
+    images.forEach(img => img.classList.remove('active'));
+    images[index].classList.add('active');
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    showImage(currentImageIndex);
+}
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    showImage(currentImageIndex);
+}
+
+// Show the first image initially
+showImage(currentImageIndex);
+
+    </script>
     <div id="footer-container"></div>
     <script src="../components/navbar/navbar.js"></script>
     <script src="../components/footer/footer.js"></script>

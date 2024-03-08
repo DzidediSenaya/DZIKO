@@ -135,6 +135,7 @@ button, input[type="submit"], .cta-btn {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
 button:hover, input[type="submit"]:hover, .cta-btn:hover {
@@ -196,7 +197,7 @@ footer {
 
 /* CSS for the contact form box styling */
 #contact-form, #donation-form, #volunteer-form {
-    width: 80%;
+    width: 50%;
     margin: auto;
     padding: 20px;
     background-color: #DEEDF9;
@@ -246,6 +247,48 @@ footer {
     min-height: 500px;
 }
 
+.gallery-container {
+    position: relative;
+    max-width: 100%; /* Ensure the gallery fits its container */
+    overflow: hidden; /* Hide overflow images */
+    margin: auto;
+    text-align: center; /* Center the images horizontally */
+    position: relative;
+}
+
+.gallery-img {
+    display: none;
+    max-width: auto; /* Ensure images don't exceed their container */
+    height: auto; /* Maintain aspect ratio */
+    width: auto; /* Ensure images take up full width of container */
+    object-fit: cover; /* Ensure images cover the container */
+}
+
+.gallery-img.active {
+    display: block; /* Show active image */
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.gallery-btn.prev {
+    left: 0;
+}
+
+.gallery-btn.next {
+    right: 0;
+}
+
+
+
 /* Media queries */
 /* Media query for small screens (smartphones) */
 @media screen and (max-width: 768px) {
@@ -264,35 +307,35 @@ footer {
     }
 }
 
-/* Media query for large screens (desktops) */
+/* Media query for large screens (desktops) 
 @media screen and (min-width: 1025px) {
     section {
         width: 50%;
     }
-}
+}*/
 
-/* Adjust the navigation layout for smaller screens */
+/* Adjust navigation bar layout for smaller screens */
 @media screen and (max-width: 768px) {
     nav {
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
     }
-
-    nav a {
-        margin: 5px; /* Reduce spacing between links */
-        font-size: 14px;
-
-
+    
+    button {
+        margin-top: 10px; /* Add some space between the support button and other links */
     }
 }
 
-/* Smaller logo size */
-nav img.logo {
-    width: 40px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+/* Ensure consistent alignment for all navigation links */
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-top: 10px; /* Add some top margin for better alignment */
+    transition: color 0.3s ease;
 }
 
-
-button {
-font-size: 14px;
+nav .contact-us {
+    margin-top: 10px; /* Add some top margin for better alignment */
 }
